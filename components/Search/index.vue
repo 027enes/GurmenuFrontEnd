@@ -9,26 +9,18 @@
       </div>
     </form>
     <div class="p-products-items" id="search-results" v-if="searchInput">
-      <template v-if="searchResult.searchResults.length">
-        <template v-for="item in searchResult.searchResults" :key="item.id">
+        <template v-for="item in searchResult.searchResults.data" :key="item.id">
           <SearchItem :item="item"/>
         </template>
-      </template>
-      <template v-else-if="searchResult.searchResultsError">
-        <div class="p-products-item">
-          <div class="not-page">
-            <h2 class="products-title">Ürün Bulunamadı</h2>
-          </div>
-        </div>
-      </template>
+
     </div>
   </div>
 </template>
 
+
 <script setup lang="ts">
 import { useDebounceFn } from '@vueuse/core';
 import { useSearch } from '~/composables/useSearch';
-import SearchItem from '~/components/Search/Item.vue';
 
 const { data: restaurant } = useNuxtData('restaurant');
 
@@ -40,9 +32,9 @@ const searchResult = ref({
   searchResultsStatus: null
 });
 
-const locale = 'tr'; // Locale sabit olarak 'tr' ayarlandı
+const locale = 'tr';
 
-function search() {
+async function search() {
   if (!searchInput.value) return;
   try {
     const {
@@ -50,13 +42,13 @@ function search() {
       error: useSearchError,
       pending: useSearchPending,
       status: useSearchStatus
-    } = useSearch(useRoute().params.restaurant, searchInput.value, locale); // Locale sabit olarak 'tr' kullanıldı
+    } = await useSearch(useRoute().params.restaurant, searchInput.value, locale);
 
     searchResult.value = {
-      searchResults: searchData,
-      searchResultsError: useSearchError,
-      searchResultsPending: useSearchPending,
-      searchResultsStatus: useSearchStatus
+      searchResults: searchData.value,
+      searchResultsError: useSearchError.value,
+      searchResultsPending: useSearchPending.value,
+      searchResultsStatus: useSearchStatus.value
     };
   } catch (e: any) {
     console.log(e);
@@ -84,6 +76,7 @@ function fetchData() {
   search();
 }
 </script>
+
 
 <style scoped>
 </style>
