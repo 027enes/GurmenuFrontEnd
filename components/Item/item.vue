@@ -55,8 +55,8 @@ const openProductSheet = () => {
        </div>
 
        <div class="sheet-desc">
-         <p>{{ product.description }}</p>
-         <p>
+         <p>{{ product.menu_content }}</p>
+         <p v-if='product.allergens'>
            <b>Alerjenler:</b> {{ product.allergens }}
          </p>
        </div>
