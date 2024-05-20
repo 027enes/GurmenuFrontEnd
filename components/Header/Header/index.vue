@@ -24,6 +24,11 @@
         <header id="header" class="header-top">
             <div class="container">
                 <div class="header-top-row">
+                        <div class="back h-item" id="back" x-data="">
+                            <NuxtLinkLocale  :to="{ name: 'restaurant-restaurant', params:{restaurant: restaurant.data.slug} }" class="back-İcon" >
+                                <nuxt-icon name='back' class="icon-font"></nuxt-icon>
+                            </NuxtLinkLocale>
+                        </div>
                     <NuxtLinkLocale  :to="{ name: 'restaurant-restaurant', params:{restaurant: restaurant.data.slug} }" class="header-top-left" activeClass="active">
                         <h2>{{restaurant.data.title}}</h2>
                         <h5>{{ restaurant.data.slogan_or_branch }}</h5>

@@ -20,7 +20,7 @@
   <script setup>
     import VueBottomSheet from "@webzlodimir/vue-bottom-sheet";
     import  "@webzlodimir/vue-bottom-sheet/dist/style.css";
-    //import BottomSheetsAbout from "@/components/BottomSheets/About/index.vue";
+    import BottomSheetsAbout from "@/components/BottomSheets/index.vue";
 
 import { ref } from "vue";
 

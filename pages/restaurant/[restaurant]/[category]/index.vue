@@ -48,6 +48,12 @@ const {
   pending: categoryPending,
   status: categoryStatus
 } = useCategory(useRoute().params.restaurant, useRoute().params.category)
+defineI18nRoute({
+  paths: {
+    tr: '/restaurant/[restaurant]/[category]',
+    en: '/restaurant/[restaurant]/[category]'
+  }
+})
 </script>
 
 <style lang="scss" scoped>

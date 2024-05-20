@@ -10,7 +10,7 @@
                     <button class="button-show" @click="toggleContent">
                         {{ $t('show_more') }}
                     </button>
-                    <nuxt-icon name="back" class="icon-font"></nuxt-icon>
+                    <nuxt-icon name="show" class="icon-font"></nuxt-icon>
 
                 </div>
             </div>
