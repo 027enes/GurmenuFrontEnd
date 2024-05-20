@@ -1,0 +1,42 @@
+
+<template>
+   <div>
+        <div v-if="categoriesPending">
+            Loading...
+        </div>
+        <div v-else>
+            <section id="line"></section>
+            <section id="products">
+                <div class="container">
+                    <div class="products-row rectangle">
+                        <Category  v-for="category in categories" :key="category.id"  :category="category"/>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </div>
+</template>
+<script setup lang="ts">
+const {data: restaurant} = useNuxtData('restaurant')
+import {useCategories} from "~/composables/useCategories";
+import Category from "@/components/Categories/item.vue";
+
+const {
+  data: categories,
+  error: categoriesError,
+  pending: categoriesPending,
+  status: categoriesStatus
+} = useCategories(useRoute().params.restaurant)
+</script>
+<style scoped>
+.page-enter-active,
+.page-leave-active {
+  transition: all 0.4s;
+}
+.page-enter-from,
+.page-leave-to {
+  opacity: 0;
+  filter: blur(1rem);
+}
+</style>
