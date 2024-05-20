@@ -5,9 +5,9 @@ export const useCategory = (restaurant: string, category: string) => {
         body: {
             restaurant: restaurant,
             category: category,
-            locale: 'tr',
+            locale: useI18n().locale.value,
         },
-        key: restaurant + category + '-category-' + 'tr',
+        key: restaurant + category + '-category-' + useI18n().locale.value,
         
     })
 }

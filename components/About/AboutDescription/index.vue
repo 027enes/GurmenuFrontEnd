@@ -2,13 +2,13 @@
     <div>
         <section id="p-about-desc">
             <div class="container">
-                <h2>İşletme Hakkında</h2>
+                <h2>{{ $t('about_the_business') }}</h2>
                 <div class="about-content" :class="{'expanded': expanded}" @click="expanded = true">
                     <div v-html="aboutDescription.description"></div>
                 </div>
                 <div class="btn-about" :class="{'btn': btn}">
                     <button class="button-show" @click="toggleContent">
-                        Daha Fazla Göster
+                        {{ $t('show_more') }}
                     </button>
                     <nuxt-icon name="back" class="icon-font"></nuxt-icon>
 

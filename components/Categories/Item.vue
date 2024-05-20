@@ -1,6 +1,6 @@
 <template>
 <div class="products-item"  v-if="restaurant.data && category.slug">
-<NuxtLink :to="link" class="products-link sag-bg">
+<NuxtLinkLocale  :to="link" class="products-link sag-bg">
       <div class="products-img">
         <NuxtImg alt="ATIŞTIRMALIKLAR" 
           :src="category.medias?.cover.conversions.optimized.url" 
@@ -13,7 +13,7 @@
       <div class="product-text sag">
         <h3>{{ category.title }}</h3>
       </div>
-    </NuxtLink>
+    </NuxtLinkLocale>
 </div>
 </template>
 

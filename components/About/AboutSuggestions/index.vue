@@ -4,7 +4,7 @@
         <div class="container">
           <div class="opinion">
             <button class="opinion-btn" @click="openBottomSheet">
-              Görüş ve Önerileriniz
+              {{ $t('your_comments_and_suggestions') }}
             </button>
           </div>
         </div>

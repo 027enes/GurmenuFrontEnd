@@ -4,9 +4,9 @@ export const useCategories = (restaurant: string) => {
         method: 'POST',
         body: {
             restaurant: restaurant,
-            locale: 'tr',
+            locale: useI18n().locale.value,
         },
-        key: restaurant + '-categories-' + 'tr',
+        key: restaurant + '-categories-' + useI18n().locale.value,
         transform(input) {
             return {
                 ...input,

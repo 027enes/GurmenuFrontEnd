@@ -18,7 +18,22 @@ export default defineNuxtConfig({
       url: 'https://gurmenu.com',
       name: 'Gurmenü'
   },
-
+  i18n: {
+    detectBrowserLanguage: {
+        useCookie: true,
+        fallbackLocale: 'tr',
+    },
+    defaultLocale: 'tr',
+    strategy: 'prefix',
+    lazy: true,
+    langDir: 'internationalization',
+    locales: [
+        {"code": "tr", "iso": "tr-TR", "file": "tr.json", "dir": "ltr"},
+        {"code": "en", "iso": "en-US", "file": "en.json", "dir": "ltr"},
+        {"code": "ru", "iso": "ru-RU", "file": "ru.json", "dir": "ltr"},
+        {"code": "de", "iso": "de-DE", "file": "de.json", "dir": "ltr"}
+    ],
+  },
   css: [
     /*'~/assets/css/reset.css',
     '~/assets/css/restaurant.css',  
@@ -27,9 +42,5 @@ export default defineNuxtConfig({
     '~/assets/css/style.css',
   ],
 
-  modules: [
-    "@nuxt/image",
-    'nuxt-icons',
-    'nuxt-swiper',
-  ]
+  modules: ["@nuxt/image", 'nuxt-icons', 'nuxt-swiper', "@nuxtjs/i18n"]
 })

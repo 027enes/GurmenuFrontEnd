@@ -18,7 +18,12 @@ import AboutDescription from '~/components/About/AboutDescription/index.vue';
 import AboutSocials from '~/components/About/AboutSocials/index.vue';
 import AboutSuggestions from '~/components/About/AboutSuggestions/index.vue';
 const {data: restaurant} = useNuxtData('restaurant')    
-
+defineI18nRoute({
+  paths: {
+    tr: '/restaurant/[restaurant]/hakkinda',
+    en: '/restaurant/[restaurant]/about'
+  }
+})
 </script>
 
 <style lang="scss" scoped>

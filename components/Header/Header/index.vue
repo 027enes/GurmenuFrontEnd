@@ -24,10 +24,10 @@
         <header id="header" class="header-top">
             <div class="container">
                 <div class="header-top-row">
-                    <NuxtLink :to="{ name: 'restaurant-restaurant', params:{restaurant: restaurant.data.slug} }" class="header-top-left" activeClass="active">
+                    <NuxtLinkLocale  :to="{ name: 'restaurant-restaurant', params:{restaurant: restaurant.data.slug} }" class="header-top-left" activeClass="active">
                         <h2>{{restaurant.data.title}}</h2>
                         <h5>{{ restaurant.data.slogan_or_branch }}</h5>
-                    </NuxtLink>
+                    </NuxtLinkLocale>
                     <div class="header-top-right ">
                         <Language />
                     </div>

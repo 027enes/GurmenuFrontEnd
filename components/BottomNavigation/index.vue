@@ -17,13 +17,13 @@
       <section id="bottom-navigation">
         <div class="container">
           <div class="bottom-navigation-row">
-            <NuxtLink :to="{name: 'restaurant-restaurant-about', params: {restaurant:restaurant.data.slug}}" class="navigation-item " activeClass="active">
+            <NuxtLinkLocale :to="{name: 'restaurant-restaurant-about', params: {restaurant:restaurant.data.slug}}" class="navigation-item " activeClass="active">
               <div class="navigation-icon restaurant-name">
                 L
               </div>
-              <span>Hakkında</span>
-            </NuxtLink>
-            <NuxtLink :to="{ name: 'restaurant-restaurant', params: { restaurant: restaurant.data.slug } }" class="navigation-item" activeClass="active">
+              <span>{{ $t('about') }}</span>
+            </NuxtLinkLocale>
+            <NuxtLinkLocale  :to="{ name: 'restaurant-restaurant', params: { restaurant: restaurant.data.slug } }" class="navigation-item" activeClass="active">
 
                 <div class="navigation-icon">
                   <svg width="20" height="20" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -35,9 +35,9 @@
                         fill="#9C9C9C"/>
                   </svg>
                 </div>
-                <span>Menü</span>
+                <span>{{ $t('menu') }}</span>
 
-            </NuxtLink>
+            </NuxtLinkLocale>
             <button class="navigation-item search-content-btn" v-on:click="isSearchActive = !isSearchActive">
               <div class="navigation-icon">
                 <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -54,7 +54,7 @@
                 </svg>
   
               </div>
-              <span>Arama Yap</span>
+              <span>{{ $t('search') }}</span>
             </button>
           </div>
         </div>
