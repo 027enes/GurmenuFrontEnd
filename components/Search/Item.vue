@@ -53,8 +53,8 @@ const openBottomSheet = () => {
         </div>
 
         <div class="sheet-desc">
-          <p>{{ item.description }}</p>
-          <p>
+          <p>{{ item.menu_content }}</p>
+          <p v-if="item.allergens">
             <b>Alerjenler:</b> {{ item.allergens }}
           </p>
         </div>
