@@ -9,7 +9,7 @@
             <section id="products">
                 <div class="container">
                     <div class="products-row rectangle">
-                        <Category  v-for="category in categories" :key="category.id"  :category="category"/>
+                        <CategoriesItem  v-for="category in categories" :key="category.id"  :category="category"/>
                     </div>
                 </div>
             </section>
@@ -20,7 +20,6 @@
 <script setup lang="ts">
 const {data: restaurant} = useNuxtData('restaurant')
 import {useCategories} from "~/composables/useCategories";
-import Category from "@/components/Categories/item.vue";
 
 const {
   data: categories,
