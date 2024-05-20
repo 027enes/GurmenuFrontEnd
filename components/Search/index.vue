@@ -32,7 +32,7 @@ const searchResult = ref({
   searchResultsStatus: null
 });
 
-const locale = 'tr';
+const locale = useI18n().locale.value;
 
 async function search() {
   if (!searchInput.value) return;
