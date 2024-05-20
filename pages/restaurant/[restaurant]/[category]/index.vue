@@ -1,4 +1,8 @@
 <template>
+  <div>
+    <Head>
+      <Title>{{ restaurant?.data?.meta?.title }} - {{ category?.data?.meta?.title }}</Title>
+    </Head>
     <div v-if="categoryError" class="error">
         <nuxt-icon name="error" filled class="icon-font error-icon"></nuxt-icon>
         <h1 class="error-title">
@@ -30,12 +34,14 @@
           </div>
         </section>
     </div>
+  </div>
 </template>
 
 <script setup lang="ts">
 import Banner from "~/components/Categories/Banner.vue";
 import Item from "~/components/Item/item.vue";
 import {useCategory} from "~/composables/useCategory";
+const {data: restaurant} = useNuxtData('restaurant') 
 const {
   data: category,
   error: categoryError,

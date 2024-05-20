@@ -1,5 +1,8 @@
 <template>
     <div>
+        <Head>
+        <Title>{{ restaurant?.data?.meta?.title }} - Hakkımızda</Title>
+    </Head>
         <main class="about-height">
             <AboutSlider :aboutSlider="restaurant?.data"/>
             <AboutDescription :aboutDescription="restaurant?.data"/>
