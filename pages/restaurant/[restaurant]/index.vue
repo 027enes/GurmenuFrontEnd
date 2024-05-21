@@ -1,10 +1,7 @@
 
 <template>
    <div>
-        <div v-if="categoriesPending">
-            Loading...
-        </div>
-        <div v-else>
+        <div>
             <section id="line"></section>
             <section id="products">
                 <div class="container">

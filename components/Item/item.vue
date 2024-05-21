@@ -1,18 +1,41 @@
 <script setup lang="ts">
 import "@webzlodimir/vue-bottom-sheet/dist/style.css";
 import VueBottomSheet from "@webzlodimir/vue-bottom-sheet";
-import {ref} from "vue";
+import { ref, onMounted } from 'vue';
 const props = defineProps({
   product: Object,
 });
 const productSheet = ref(null);
 const openProductSheet = () => {
   productSheet.value.open();
-}</script>
+}
+const loading = ref(true);
+
+onMounted(() => {
+  setTimeout(() => {
+    loading.value = false;
+  }, 1000); // 2 saniye gecikme
+})
+</script>
 
 <template>
  <div>
-   <div class="p-products-item" @click="openProductSheet">
+
+  <div class="p-products-item" v-if="loading">
+     <div class="prod-cont">
+       <div class="p-products-top">
+         <div class="products-item-img">
+           <USkeleton class="uskeleton-img"/>
+         </div>
+         <div class="products-item-text">
+           <USkeleton class="uskeleton-text"/>
+           <USkeleton class="uskeleton-text" />
+         </div>
+       </div>
+     </div>
+   </div>
+
+   <div class="p-products-item" v-else @click="openProductSheet">
      <div class="prod-cont">
        <div class="p-products-top">
          <div class="products-item-img">
@@ -32,6 +55,8 @@ const openProductSheet = () => {
        </div>
      </div>
    </div>
+
+
    <client-only>
    <vue-bottom-sheet ref="productSheet" :max-height="1000">
      <main class="body fill column">
@@ -66,6 +91,14 @@ const openProductSheet = () => {
  </div>
 </template>
 
-<style scoped lang="scss">
-
+<style scoped >
+.uskeleton-img{
+  width: 80px;
+  height: 80px;
+}
+.uskeleton-text{
+  width: 100%;
+  height: 20px;
+  margin: 5px 0;
+}
 </style>
