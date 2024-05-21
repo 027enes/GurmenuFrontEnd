@@ -25,11 +25,11 @@ onMounted(() => {
      <div class="prod-cont">
        <div class="p-products-top">
          <div class="products-item-img">
-           <USkeleton class="uskeleton-img"/>
+           <USkeleton class="uskeleton-img uskeleton-custom skeleton-box"/>
          </div>
          <div class="products-item-text">
-           <USkeleton class="uskeleton-text"/>
-           <USkeleton class="uskeleton-text" />
+           <USkeleton class="uskeleton-text uskeleton-custom skeleton-box"/>
+           <USkeleton class="uskeleton-text uskeleton-custom skeleton-box" />
          </div>
        </div>
      </div>
@@ -100,5 +100,54 @@ onMounted(() => {
   width: 100%;
   height: 20px;
   margin: 5px 0;
+}
+
+.uskeleton-custom {
+  background-color: #424242; /* USkeleton rengi */
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
+  opacity: 0;
+}
+.skeleton-box {
+  background-color: #f0f0f0;
+  position: relative;
+  overflow: hidden;
+}
+
+.skeleton-box::before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 0;
+  left: -150%;
+  height: 100%;
+  width: 50%;
+  background: linear-gradient(to right, transparent 0%, rgb(104, 104, 104) 50%, transparent 100%);
+  animation: loading 3.5s infinite;
+}
+
+@keyframes loading {
+  0% {
+    left: -150%;
+  }
+  50% {
+    left: 100%;
+  }
+  100% {
+    left: 100%;
+  }
+}
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity 0.5s ease;
+}
+
+.fade-enter, .fade-leave-to {
+  opacity: 0;
 }
 </style>
