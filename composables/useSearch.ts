@@ -5,7 +5,7 @@ export const useSearch = (restaurant: string, searchString: string, locale: stri
         body: {
             restaurant: restaurant,
             search: searchString,
-            locale: useI18n().locale.value,
+            locale: locale,
         }
     });
 }
