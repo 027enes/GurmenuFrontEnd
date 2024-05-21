@@ -24,10 +24,7 @@
       <section id="products-content">
           <div class="container">
             <div class="p-products-items products-page-items">
-              <template v-if="categoryPending">
-                Kategoriler bekleniyor...
-              </template>
-              <template v-else>
+              <template v-if="categoryStatus == 'success'">
                 <Item v-for="p in category.data.items" :product="p" :key="p.id"/>
               </template>
             </div>
