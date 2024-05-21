@@ -13,8 +13,7 @@
             >
                     <swiper-slide v-for="(media, index) in aboutSlider.medias.photos" :key="index">
                         <img :src="media.url" alt="LaVita" />
-                    </swiper-slide>
-                    <div class="about-row">
+                        <div class="about-row" v-if="index === 0">
                         <div class="about-top-row">
                             <h5 class="about-photo-content">{{ aboutSlider.opening_and_closing_time }}</h5>
                         </div>
@@ -30,6 +29,8 @@
                             </div>
                         </div>
                     </div>
+                    </swiper-slide>
+                    
             </Swiper>
         </section>
     </div>
