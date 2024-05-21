@@ -3,7 +3,7 @@
         <section id="about-slider">
             <Swiper
                 class="aboutSlider"
-                :loop="true"
+                :loop="false"
                 :modules="modules"
                 :navigation="false"
                 :slides-per-view="1"
