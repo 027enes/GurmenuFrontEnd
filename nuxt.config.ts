@@ -40,6 +40,7 @@ export default defineNuxtConfig({
     '~/assets/css/light.css',*/
     '~/assets/css/custom.css',
     '~/assets/css/style.css',
+    'flag-icons/css/flag-icons.min.css',
   ],
 
   modules: ["@nuxt/image", 'nuxt-icons', 'nuxt-swiper', "@nuxtjs/i18n"]
