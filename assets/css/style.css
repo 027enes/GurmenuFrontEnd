@@ -13,6 +13,12 @@
 .fi-lang{
     font-size: 24px;
 }
+
+  .uskeleton-banner-text{
+    width: 200px;
+    height: 30px;
+  }
+  
 .header-top-left{
     text-align: center;
 }
@@ -680,6 +686,7 @@ body.active{
     letter-spacing: 1px;
     max-width: 100% !important;
 }
+#products-banner .p-banner-text .uskeleton-banner-text,
 #products-banner .p-banner-text h2{
     max-width: 1200px;
     margin: 0 auto;

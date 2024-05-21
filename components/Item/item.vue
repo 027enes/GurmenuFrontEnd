@@ -14,7 +14,7 @@ const loading = ref(true);
 onMounted(() => {
   setTimeout(() => {
     loading.value = false;
-  }, 1000); // 2 saniye gecikme
+  }, 1000); 
 })
 </script>
 
