@@ -88,7 +88,9 @@ const modules = [ Pagination, Autoplay];
 const loading = ref(true);
 
 onMounted(() => {
-  loading.value = false;
+  setTimeout (() => {
+    loading.value = false;
+  }, 3000);
 });
 </script>
 

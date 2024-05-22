@@ -80,7 +80,9 @@ const breakpoints = ref({
 const loading = ref(true);
 
 onMounted(() => {
-  loading.value = false;
+  setTimeout (() => {
+    loading.value = false;
+  }, 3000);
 });
 </script>
 
