@@ -1,54 +1,53 @@
 <template>
-    <div>
-        <div v-if="loading">
-            <section id="p-about-desc">
-                <div class="container">
-                    <USkeleton class="uskeleton-about-title uskeleton-custom skeleton-box"/>
-                    <div class="about-content" :class="{'expanded': expanded}" @click="expanded = true">
-                        <USkeleton class="uskeleton-about-description uskeleton-custom skeleton-box"/>
-                    </div>
-                    <USkeleton class="uskeleton-about-slider-text uskeleton-custom skeleton-box"></USkeleton>
-                </div>
-            </section>
-        </div>
-        <div v-else>
-            <section id="p-about-desc">
-                <div class="container">
-                    <h2>{{ $t('about_the_business') }}</h2>
-                    <div class="about-content" :class="{'expanded': expanded}" @click="expanded = true">
-                        <div v-html="aboutDescription.description"></div>
-                    </div>
-                    <div class="btn-about" :class="{'btn': btn}">
-                        <button class="button-show" @click="toggleContent">
-                            {{ $t('show_more') }}
-                        </button>
-                        <nuxt-icon name="show" class="icon-font"></nuxt-icon>
-
-                    </div>
-                </div>
-            </section>
-        </div>
-    </div>
+  <div>
+      <div v-if="loading">
+          <section id="p-about-desc">
+              <div class="container">
+                  <USkeleton class="uskeleton-about-title uskeleton-custom skeleton-box" />
+                  <div class="about-content" :class="{ expanded: expanded }" @click="expanded = true">
+                      <USkeleton class="uskeleton-about-description uskeleton-custom skeleton-box" />
+                  </div>
+                  <USkeleton class="uskeleton-about-slider-text uskeleton-custom skeleton-box"></USkeleton>
+              </div>
+          </section>
+      </div>
+      <div v-else>
+          <section id="p-about-desc">
+              <div class="container">
+                  <h2>{{ $t('about_the_business') }}</h2>
+                  <div class="about-content" :class="{ expanded: expanded }" @click="expanded = true">
+                      <div v-html="aboutDescription.description"></div>
+                  </div>
+                  <div class="btn-about" :class="{ btn: btn }">
+                      <button class="button-show" @click="toggleContent">
+                          {{ $t('show_more') }}
+                      </button>
+                      <nuxt-icon name="show" class="icon-font"></nuxt-icon>
+                  </div>
+              </div>
+          </section>
+      </div>
+  </div>
 </template>
 
-
 <script setup>
-    import {ref} from 'vue';
-    const { aboutDescription } = defineProps(['aboutDescription']);
-    const expanded = ref(false);
-    const btn = ref(false);
-    const toggleContent = () => {
-        expanded.value = !expanded.value;
-        btn.value = !btn.value;
-    };
+import { ref, onMounted } from 'vue';
 
-    const loading = ref(true);
-    onMounted (()=> {
-        setTimeout(() => {
-            loading.value = false;
-        }, 1000);
-    })
+const { aboutDescription } = defineProps(['aboutDescription']);
+const expanded = ref(false);
+const btn = ref(false);
+
+const toggleContent = () => {
+  expanded.value = !expanded.value;
+  btn.value = !btn.value;
+};
+const loading = ref(true);
+
+onMounted(() => {
+  loading.value = false;
+});
 </script>
+
 
 <style scoped >
 

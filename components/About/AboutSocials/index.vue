@@ -4,17 +4,17 @@
       <section id="socials">
         <div class="container">
           <Swiper
-              class="about-Slider"
-              :loop="false"
-              :modules="[ Autoplay, Scrollbar]"
-              :slides-per-view="slidesPerView"
-              :space-between="20"
-              :breakpoints="breakpoints"
-              :scrollbar="{ draggable: false, hide: false }" 
-              :draggable="true"
+            class="about-Slider"
+            :loop="false"
+            :modules="[Autoplay, Scrollbar]"
+            :slides-per-view="slidesPerView"
+            :space-between="20"
+            :breakpoints="breakpoints"
+            :scrollbar="{ draggable: false, hide: false }"
+            :draggable="true"
           >
             <swiper-slide v-for="i in 8" :key="i">
-              <USkeleton class="uskeleton-socials-box uskeleton-custom skeleton-box"/>
+              <USkeleton class="uskeleton-socials-box uskeleton-custom skeleton-box" />
             </swiper-slide>
           </Swiper>
         </div>
@@ -24,14 +24,14 @@
       <section id="socials">
         <div class="container">
           <Swiper
-              class="about-Slider"
-              :loop="false"
-              :modules="[ Autoplay, Scrollbar]"
-              :slides-per-view="slidesPerView"
-              :space-between="20"
-              :breakpoints="breakpoints"
-              :scrollbar="{ draggable: true, hide: false }" 
-              :draggable="true"
+            class="about-Slider"
+            :loop="false"
+            :modules="[Autoplay, Scrollbar]"
+            :slides-per-view="slidesPerView"
+            :space-between="20"
+            :breakpoints="breakpoints"
+            :scrollbar="{ draggable: true, hide: false }"
+            :draggable="true"
           >
             <swiper-slide v-for="i in 8" :key="i">
               <div class="slide-socials" data-bs-toggle="modal" data-bs-target="#address-modal">
@@ -49,14 +49,14 @@
 </template>
 
 <script setup>
-import {Swiper, SwiperSlide} from 'swiper/vue';
-import {Pagination, Autoplay, Scrollbar } from 'swiper/modules';
+import { Swiper, SwiperSlide } from 'swiper/vue';
+import { Pagination, Autoplay, Scrollbar } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/autoplay';
-import 'swiper/css/scrollbar';  
+import 'swiper/css/scrollbar';
 
+import { ref, onMounted } from 'vue';
 
-import { ref } from 'vue';
 const slidesPerView = ref(2);
 const breakpoints = ref({
   // when window width is <= 768px
@@ -78,11 +78,10 @@ const breakpoints = ref({
 });
 
 const loading = ref(true);
-onMounted (()=> {
-  setTimeout(() => {
-    loading.value = false;
-  }, 1000);
-})
+
+onMounted(() => {
+  loading.value = false;
+});
 </script>
 
 <style scoped >

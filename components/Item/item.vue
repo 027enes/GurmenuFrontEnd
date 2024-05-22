@@ -9,13 +9,12 @@ const productSheet = ref(null);
 const openProductSheet = () => {
   productSheet.value.open();
 }
+
 const loading = ref(true);
 
 onMounted(() => {
-  setTimeout(() => {
-    loading.value = false;
-  }, 1000); 
-})
+  loading.value = false;
+});
 </script>
 
 <template>

@@ -9,10 +9,8 @@ const props = defineProps<{
 const loading = ref(true);
 
 onMounted(() => {
-  setTimeout(() => {
-    loading.value = false;
-  }, 1000); 
-})
+  loading.value = false;
+});
 </script>
 
 <template>
