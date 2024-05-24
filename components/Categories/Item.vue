@@ -42,7 +42,7 @@ const loading = ref(true);
 onMounted(() => {
   setTimeout (() => {
     loading.value = false;
-  }, 3000);
+  }, 1000);
 });
 const link = computed(() => ({
   name: 'restaurant-restaurant-category',

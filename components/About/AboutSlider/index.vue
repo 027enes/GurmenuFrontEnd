@@ -3,7 +3,7 @@
       <div v-if="loading">
           <section id="about-slider">
               <Swiper
-                  class="aboutSlider"
+                  class=""
                   :loop="false"
                   :modules="modules"
                   :navigation="false"
@@ -90,7 +90,7 @@ const loading = ref(true);
 onMounted(() => {
   setTimeout (() => {
     loading.value = false;
-  }, 3000);
+  }, 1000);
 });
 </script>
 

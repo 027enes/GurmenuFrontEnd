@@ -33,8 +33,16 @@
             :scrollbar="{ draggable: true, hide: false }"
             :draggable="true"
           >
-            <swiper-slide v-for="i in 8" :key="i">
-              <div class="slide-socials" data-bs-toggle="modal" data-bs-target="#address-modal">
+            <swiper-slide>
+              <div class="slide-socials" @click="openModal">
+                <div class="socials-content">
+                  <nuxt-icon name="wifi" class="Socials" />
+                </div>
+                <span>Wifi</span>
+              </div>
+            </swiper-slide>
+            <swiper-slide v-for="i in 6" :key="i">
+              <div class="slide-socials">
                 <div class="socials-content">
                   <nuxt-icon name="instagram" class="Socials"></nuxt-icon>
                 </div>
@@ -45,6 +53,12 @@
         </div>
       </section>
     </div>
+    <div v-if="isModalOpen">
+      <Modal :closeModal = 'closeModal' />
+    </div>
+    <div v-else>
+
+    </div>
   </div>
 </template>
 
@@ -54,6 +68,7 @@ import { Pagination, Autoplay, Scrollbar } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import 'swiper/css/scrollbar';
+import Modal from '~/components/WifiModal/modal.vue';
 
 import { ref, onMounted } from 'vue';
 
@@ -79,10 +94,18 @@ const breakpoints = ref({
 
 const loading = ref(true);
 
+const isModalOpen = ref(false);
+function openModal() {
+  isModalOpen.value = true;
+}
+function closeModal() {
+  isModalOpen.value = false;
+}
+
 onMounted(() => {
   setTimeout (() => {
     loading.value = false;
-  }, 3000);
+  }, 1000);
 });
 </script>
 

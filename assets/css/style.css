@@ -13,7 +13,22 @@
 .fi-lang{
     font-size: 24px;
 }
+.wifi-modal{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 999999;
+    width: 400px;
+    transform: translate(-50%, -50%);
+}
+.wifi-modal .modal-content{
+    width: 100%;
+    padding:20px 10px;
 
+}
+.wifi-modal .modal-footer{
+    text-align: center;
+}
   .uskeleton-banner-text{
     width: 200px;
     height: 30px;
@@ -502,6 +517,9 @@ a,li{
 }
 .navigation-icon svg path{
     fill: #9C9C9C;
+}
+.bottom-navigation-row .navigation-item.active .restaurant-name{
+    color: var(--restaurant-color);
 }
 .navigation-item span{
     color: #9C9C9C;
@@ -1088,6 +1106,7 @@ body.active{
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    cursor: pointer;
 }
 .socials-content{
     color: white;
@@ -1257,12 +1276,12 @@ body.active{
     border: none;
     outline: none;
 }
-.modal-header .modal-close i{
+.modal-header .modal-close .modal-close-icon{
     background: #9C9C9C !important;
-    padding: 8px;
+    padding: 2px;
     color: #fff !important;
     border-radius: 10px;
-    font-size: 12px;
+    font-size: 16px;
 }
 .modal-header .modal-close span{
     font-size: 14px;

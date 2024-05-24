@@ -40,5 +40,5 @@ export default defineNuxtConfig({
     'flag-icons/css/flag-icons.min.css',
   ],
 
-  modules: ["@nuxt/image", 'nuxt-icons', 'nuxt-swiper', "@nuxtjs/i18n", "@nuxt/ui"]
+    modules: ["@nuxt/image", 'nuxt-icons', 'nuxt-swiper', "@nuxtjs/i18n", "@nuxt/ui",],
 })

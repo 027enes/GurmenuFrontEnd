@@ -18,9 +18,9 @@
         <div class="container">
           <div class="bottom-navigation-row">
             <NuxtLinkLocale :to="{name: 'restaurant-restaurant-about', params: {restaurant:restaurant.data.slug}}" class="navigation-item " activeClass="active">
-              <div class="navigation-icon restaurant-name">
-                L
-              </div>
+                <div class="navigation-icon restaurant-name">
+                  {{ getFirstLetter(restaurant.data.title) }}
+                </div>
               <span>{{ $t('about') }}</span>
             </NuxtLinkLocale>
             <NuxtLinkLocale  :to="{ name: 'restaurant-restaurant', params: { restaurant: restaurant.data.slug } }" class="navigation-item" activeClass="active">
@@ -66,6 +66,10 @@
    import Search from "~/components/Search/index.vue";
    const isSearchActive = ref(false);
    const {data:restaurant} = useNuxtData('restaurant');
+
+   function getFirstLetter(title) {
+     return title ? title.charAt(0) : '';
+   }
   </script>
   
   <style>
