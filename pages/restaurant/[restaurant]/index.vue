@@ -2,6 +2,8 @@
 <template>
    <div>
         <div>
+          <!--<Stories />-->
+          <Campaigns/>
             <section id="line"></section>
             <section id="products">
                 <div class="container">
@@ -16,7 +18,8 @@
 <script setup lang="ts">
 const {data: restaurant} = useNuxtData('restaurant')
 import {useCategories} from "~/composables/useCategories";
-
+import campaigns from "~/components/Campaigns/campaigns.vue";
+import stories from "~/components/Stories/stories.vue";
 const {
   data: categories,
   error: categoriesError,
